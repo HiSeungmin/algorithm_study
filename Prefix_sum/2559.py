@@ -2,11 +2,13 @@
 import sys
 N, K = map(int, sys.stdin.readline().split())
 arr = list(map(int, sys.stdin.readline().split()))
-new_arr=[]
-for i in range(N-K+1):
-    sum = 0
-    for j in range(K):
-        sum += arr[i+j]
-    new_arr.append(sum)
+sum = 0
+n_arr=[]
+for i in range(K):
+    sum += arr[i]
+n_arr.append(sum)
 
-print(max(new_arr))    
+for j in range(0, N-K):
+    n_arr.append(n_arr[-1]+arr[j+K]-arr[j])
+
+print(max(n_arr))
