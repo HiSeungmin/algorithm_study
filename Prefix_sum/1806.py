@@ -21,5 +21,5 @@ for start in range(N):
 if len == N+1:
     print(0)
 else:
-    print(len
+    print(len)
 
