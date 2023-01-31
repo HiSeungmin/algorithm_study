@@ -12,7 +12,7 @@ for _ in range(M):
 
 visited = [False]*(N+1)
 def dfs(x):
-    visited[x] = True
+    visited[x] = Trueㅔ
     for node in graph[x]:
         if not visited[node]:
             dfs(node)

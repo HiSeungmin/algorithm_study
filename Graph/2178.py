@@ -1,3 +1,4 @@
+# 2178 : 미로 탐색
 from collections import deque
 # a = 4
 # b = 6
