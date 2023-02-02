@@ -1,6 +1,7 @@
 # 2667 : 단지번호 붙이기
 from collections import deque
 
+check=deque([])
 dx = [0, 0, 1 , -1]
 dy = [1, -1, 0, 0]
 
@@ -37,5 +38,6 @@ for a in range(N):
 
 village.sort()
 print(len(village))
+
 for k in range(len(village)):
     print(village[k])
