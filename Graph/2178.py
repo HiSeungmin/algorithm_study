@@ -16,7 +16,7 @@ dx = [0, 0, -1 , 1]
 dy = [-1, 1, 0, 0]
 
 while check:
-    print(check)
+    #print(check)
     y,x = check.popleft()
     
     for i in range(4):
