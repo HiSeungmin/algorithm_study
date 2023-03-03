@@ -7,9 +7,9 @@ dy = [1, -1, 0, 0]
 M, N, H = map(int, input().split())
 field = []
 q = deque()
-for i in range(N):
-    field.append(list(map(int, input().split())))
 
+for i in range(N*H):
+    field.append(list(map(int, input().split())))
     for j in range(M):
         if field[i][j] == 1:
             q.append([i,j])
@@ -26,6 +26,15 @@ def bfs():
             if 0<=nx<N and 0<=ny<M and field[nx][ny] == 0:
                 field[nx][ny] = field[x][y] + 1
                 q.append([nx, ny])
+        
+        for h in range(2):
+            nx = x - N
+            ny = y - M
+
+            if 0<=nx<N and 0<=ny<M and field[nx][ny] == 0:
+                field[nx][ny] = field[x][y] + 1
+                q.append([nx, ny])
+
 
 bfs()
 date = 0
