@@ -17,9 +17,6 @@ for _ in range(K):
             # print(y)
             paper[x][y] = 0
 
-
-
-
 def bfs(paper, i, j):
     cnt = 0
     check = deque([])
@@ -35,7 +32,6 @@ def bfs(paper, i, j):
                 paper[nx][ny] = 0
                 cnt += 1 
                 check.append([nx,ny])
-
     return cnt
 
 ans = []
