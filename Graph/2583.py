@@ -38,7 +38,7 @@ ans = []
 for i in range(M):
     for j in range(N):
         if paper[i][j] == 1:
-            ans.append(bfs(paper, i, j))
+           ㄹppend(bfs(paper, i, j))
 
 ans.sort()
 

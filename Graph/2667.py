@@ -1,43 +1,43 @@
-# 2667 : 단지번호 붙이기
+# 2667 : 단지번호붙이기
+
 from collections import deque
 
-check=deque([])
-dx = [0, 0, 1 , -1]
-dy = [1, -1, 0, 0]
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
 
-def bfs(arr, a, b):
-    families = 1 #가구 수
-    arr[a][b] = 0
+def bfs(arr, i, j):
     q = deque()
-    q.append([a,b])
-
+    arr[i][j] = 0
+    q.append([i,j])
+    cnt = 1
     while q:
         x, y = q.popleft()
 
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
+        for k in range(4):
+            nx = dx[k] + x
+            ny = dy[k] + y
 
-            if 0<=nx<len(arr) and 0<=ny<len(arr) and arr[nx][ny] == 1:
+            if 0<=nx<N and 0<=ny<N and arr[nx][ny] == 1:
                 arr[nx][ny] = 0
-                q.append([nx,ny])
-                families += 1
-    return families
+                cnt += 1
+                q.append([nx,ny]) 
 
+    return cnt
 
 N = int(input())
 arr = []
-arr = [list(map(int, input())) for _ in range(N)]
+for _ in range(N):
+    arr.append(list(map(int, input())))
 
-village = []
+result = []
 
-for a in range(N):
-    for b in range(N):
-        if arr[a][b] == 1:
-            village.append(bfs(arr,a,b))
+for i in range(N):
+    for j in range(N):
+        if arr[i][j] == 1:
+            result.append(bfs(arr, i, j))
 
-village.sort()
-print(len(village))
+result.sort()
 
-for k in range(len(village)):
-    print(village[k])
+print(len(result))
+for ele in result:
+    print(ele)
