@@ -9,16 +9,13 @@ field = []
 q = deque()
 for i in range(N):
     field.append(list(map(int, input().split())))
-
     for j in range(M):
         if field[i][j] == 1:
             q.append([i,j])
 
 def bfs():
-
     while q:
         x, y = q.popleft()
-
         for i in range(4): 
             nx = x + dx[i]
             ny = y + dy[i]
