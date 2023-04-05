@@ -13,14 +13,14 @@ def bright_check(k):
     for i in range(len(arr)-1):
         l = arr[i] + k
         r = arr[i+1] - k
-        if (l - r):
+        if (l - r) < 0:
             check = False
     if arr[0] - k > 0 or arr[-1] + k < N:
         check = False
     return check 
 
 left, right, mid = 0, N, 0
-result = 0
+result = N
 chk = False
 
 while left <= right:
