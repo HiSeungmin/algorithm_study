@@ -1,4 +1,4 @@
-# 7569 : 토마토
+# 7569 : 토마토(3차 배열)
 from collections import deque
 
 dx = [0, 0, -1, 1]
