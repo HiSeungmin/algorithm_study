@@ -13,7 +13,6 @@ for k in range(H):
     for i in range(N):
         field.append(list(map(int, input().split())))
         for j in range(M):
-            pass
             if field[i][j] == 1:
                 q.append([k,i,j])
     whole_field.append(field)
