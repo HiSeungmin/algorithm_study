@@ -9,7 +9,7 @@ for _ in range(M):
   a, b =  map(int, input().split(' '))  
   city[a].append(b)
 
-distance = [-1] *(N+1)
+distance = [-1]*(N+1)
 distance[X] = 0
 
 q = deque([X])
