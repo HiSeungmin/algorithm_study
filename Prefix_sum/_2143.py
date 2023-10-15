@@ -1,2 +1,2 @@
-# 2143 : 두 배열의 합
-
+a, b, c = map(int, input().split())
+print(a+b+c)
