@@ -2,20 +2,19 @@
 
 N = int(input())
 
-i = 1
-min = 5000
+cnt = 0
+i = 0
+a = 10
+while 1:
+    a = N-((N//5)*5)+(5*i)
+    
+    if a%3 == 0:
+        cnt+=(N//5)-i
+        print(cnt+(a//3))
+        exit(0)
+    i+=1
+    if (5*i)>N:
+        break
 
-while i <= (N//5):
-    if (N-(5*i))%3 == 0:
-        num = 0
-        num += i
-        num += (N-(5*i))//3
-    i += 1
-
-if num == 0 and num%3==0:
-    num = N//3
-
-if num == 0:
-    print(-1)
-else: 
-    print(num)
+if(N%3==0): print(N//3)
+else: print(-1)

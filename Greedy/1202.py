@@ -17,6 +17,7 @@ bag.sort()
 
 tmp = []
 price = 0
+
 for i in bag:
 
     while arr and  arr[0][0]<= i:
@@ -24,4 +25,3 @@ for i in bag:
         print(heapq.heappop(arr))
     if tmp:
         price -= heapq.heappop(tmp)
-
