@@ -1,3 +1,4 @@
+#14502 : 연구소
 
 from collections import deque
 import copy
@@ -22,11 +23,9 @@ def bfs():
             nx = x + dx[i]
             ny = y + dy[i]
 
-            if nx < 0 or nx >= n or ny < 0 or ny >= m:
-                continue
-            if tmp_graph[nx][ny] == 0: 
+            if 0<=nx<n and 0<=ny<m and tmp_graph[nx][ny] == 0: 
                 tmp_graph[nx][ny] = 2 
-                queue.append((nx, ny)) 
+                queue.append([nx, ny]) 
 
     global answer
     cnt = 0
@@ -37,7 +36,7 @@ def bfs():
     answer = max(answer, cnt)
 
 def makeWall(cnt):
-    if cnt == 3:
+    if cnt == 3: # 벽이 3개면 바이러스 퍼뜨리기
         bfs()
         return
 
