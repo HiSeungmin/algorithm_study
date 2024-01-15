@@ -9,7 +9,6 @@ def dfs(n):
     for k in range(N):
         if v1[k]==v2[n+k]==v3[n-k]==0:
             v1[k]=v2[n+k]=v3[n-k]=1
-            print(v1, v2, v3)
             dfs(n+1)
             v1[k]=v2[n+k]=v3[n-k]=0
 

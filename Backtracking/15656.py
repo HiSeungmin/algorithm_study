@@ -1,18 +1,14 @@
-#15654 : N과 M(5)
-
+#15656 N과M(7)
 def dfs(n, lst):
     if n==M:
         print(*lst)
         return
     
     for k in range(N):
-        if v[k] == 0:
-            v[k] = 1
-            dfs(n+1,lst+[arr[k]])
-            v[k] = 0
+        dfs(n+1,lst+[arr[k]])
+        
 
 N,M = map(int,input().split())
 arr = list(map(int,input().split()))
 arr.sort()
-v = [0]*N
 dfs(0,[])
