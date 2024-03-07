@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 def dfs(n,k):
     global ans
-    if n >= M:
+    if n == M:
         s = 0
         for hx, hy in house:
             dis = 1e9
@@ -16,10 +16,10 @@ def dfs(n,k):
         ans=min(ans,s)
         return
 
-    for i in range(len(chicken)):
+    for i in range(k,len(chicken)):
         if v[i] == 0:
             v[i] = 1
-            dfs(n+1)
+            dfs(n+1,i+1)
             v[i] = 0
         
 N, M = map(int, input().split())

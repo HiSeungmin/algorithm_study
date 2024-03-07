@@ -36,3 +36,5 @@ def dijkstra(x):
 
 dijkstra(start)
 print(visited[end])
+print(graph)
+print(visited)
