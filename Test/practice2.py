@@ -1,17 +1,23 @@
 import sys
 input = sys.stdin.readline
-k = int(input())
+
+N, S = map(int,input().split())
 arr = list(map(int,input().split()))
-tree = [[] for _ in range(k)]
 
-def Tree(lst,x):
-    mid = len(lst)//2
-    tree[x].append(lst[mid])
-    if len(lst) == 1:
-        return
-    Tree(lst[:mid],x+1)
-    Tree(lst[mid+1:],x+1)
+len = N+1
+end = 0
+sum = 0
+for start in range(N):
+    while sum < S and end<N:
+        sum += arr[end]
+        end += 1
+        
+    if sum >= S:
+        len = min(end - start,len)
+    
+    sum -= arr[start] 
 
-Tree(arr,0)
-for i in range(k):
-    print(*tree[i])
+if len == N+1:
+    print(0)
+else:
+    print(len)

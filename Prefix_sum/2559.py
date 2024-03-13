@@ -8,7 +8,7 @@ for i in range(K):
     sum += arr[i]
 n_arr.append(sum)
 
-for j in range(0, N-K):
+for j in range(N-K):
     n_arr.append(n_arr[-1]+arr[j+K]-arr[j])
-
+print(n_arr)
 print(max(n_arr))
